@@ -132,13 +132,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-11-06T05:20:20.514Z">2020-11-06</time>
+                <time class="level-item has-text-grey" datetime="2020-11-10T14:06:45.866Z">2020-11-10</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6분 읽기 (대략 927 단어)
+                    1분 읽기 (대략 223 단어)
                 </span>
                 
                 
@@ -147,130 +147,123 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/11/06/20201107/">20201107</a>
+                <a class="has-link-black-ter" href="/2020/11/10/20201105/">20201105</a>
             
         </h1>
         <div class="content">
-            <h2 id="어제-JS로-한-삽질에-대한-기록"><a href="#어제-JS로-한-삽질에-대한-기록" class="headerlink" title="어제 JS로 한 삽질에 대한 기록"></a>어제 JS로 한 삽질에 대한 기록</h2><p>배우고 있는 시기에, 늘 겪는일중 하나인 삽질에 대해 설명해보고자 합니다. (Tmi이지만, 제가 겪어보게 되었거든요 하하..)</p>
-<p>제블로그를 처음 오신분들도 있을수 있으니깐, 2020-11-05 포스트를 참고 해주시거나 </p>
-<p>개발하다 보면 이곳을 파야 정답이 나오는데, 다른곳을 파다 틀리는 경우도 있고 바로 앞에 결과가 있는데 빙 돌아서 다시 온 경우도 있었습니다.</p>
-<p>일딴 어제의 소스코드를 다시 올리고자 합니다.</p>
+            <h2 id="배운점이-많은-하루"><a href="#배운점이-많은-하루" class="headerlink" title="배운점이 많은 하루"></a>배운점이 많은 하루</h2><ul>
+<li>수정 : 많은걸 갈아버렸습니다 20201106 일지를 확인해주시면 감사하겠습니다 !</li>
+</ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; API 불러오기</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 실무에선 axios를 많이 사용하지만 fetch로도 충분히 끌어올수 있다. (blog 참고, 조언참고)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; fetch(&#39;url&#39;) &#x3D; 서버에 불러올 자료 끌어오기</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;my-json-server.typicode.com&#x2F;hackurity01&#x2F;prgrms-gsmhs-rct-1-week-api&#x2F;questions&#x2F;1031&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    .then(function(response)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 서버에서 원초적인 데이터를 가져온다</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        return response.json();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &#125;) </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    .then(function(myJson_data) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 1차 가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; console.log(myJson_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        let Json_data &#x3D; JSON.stringify(myJson_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        console.log(Json_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 서버에서 가져온 데이터를 가공한다 1차가공후 2차가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        let Json_parse &#x3D; JSON.parse(Json_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; Mr.blog씨의 날짜와 질문(date, question) 3차가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        console.log(Json_parse);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        let Blog_date &#x3D; Json_parse.id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        let Blog_question &#x3D; Json_parse.question;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        console.log(Blog_date);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">        console.log(Blog_question);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        document.getElementById(&#39;blog_question&#39;).value &#x3D; &quot;12223&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    &#125;);</span></pre></td></tr></table></figure>
-<p>이러한 소스코드를 쓰게 되었는데, fetch에 대해 정확한 설명을 안보고… JSON.stringify()를 통해 JSON을 다시 문자배열로 만들어 버리고 (여기서 이상한걸 느끼지 못했습니다..) 이코드가 왜 안되는지 생각했습니다. </p>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-10T14:04:48.002Z">2020-11-10</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9분 읽기 (대략 1288 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/10/Today%20list/">Today list</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="지난-1년여간의-회고록"><a href="#지난-1년여간의-회고록" class="headerlink" title="지난 1년여간의 회고록"></a>지난 1년여간의 회고록</h2><p>어찌 보면 현재 학교의 시간은 11월 이후와 이전으로 나뉘게 됩니다.<br>11월 이후 1년 동안 자신이 배울 수 있는 걸 펼칠 수 있는 GSM Festival과 함께 여러 IT 행사들이 몰려있기 때문입니다.</p>
+<p>우선 잘한 점을 말하기 전에 내가 한 행동에 대한 반성을 시작하려 합니다.<br>어찌 보면 1년 전보다 더 발전한 부분은 있지만 더 후퇴한 부분 또한 있기 때문입니다.</p>
+<h2 id="첫-번째-시간-활용에-대한-부재"><a href="#첫-번째-시간-활용에-대한-부재" class="headerlink" title="첫 번째 - 시간 활용에 대한 부재"></a>첫 번째 - 시간 활용에 대한 부재</h2><p>자신에게 부과된 시간을 제대로 활용하지 못한 채로 1년을 보내게 되었습니다. 이점에서 반성해야 한다 생각합니다. 여가 시간 대부분을 운동이나 독서와 같은 생산적 활동이 아닌 게임과 같은 비생산적 활동이 대부분이 차지한 점을 깊이 반성하게 되었습니다.</p>
+<h2 id="두-번째-기대치의-높은-설정"><a href="#두-번째-기대치의-높은-설정" class="headerlink" title="두 번째 - 기대치의 높은 설정"></a>두 번째 - 기대치의 높은 설정</h2><p>자신에게 기대한 목표치를 너무 높게 설정해서, 그 일을 해결하기 전에 포기하는 경향이 있었습니다. 이점에서 반성해야 생각합니다. 자신이 맡을 수 있는 일과 없는 일을 확실히 구분하여 처리해야 하는 능력을 길러야 한다 생각을 가지게 되었습니다. 자신이 처리 못하는 일을 자신이 하겠다고 나서게 된다면, 자신 포함 그 일을 하는 사람 전체에게 피해를 줄 수 있기 때문입니다.</p>
+<h2 id="세-번째-전환점에-대한-활용-부재"><a href="#세-번째-전환점에-대한-활용-부재" class="headerlink" title="세 번째 - 전환점에 대한 활용 부재"></a>세 번째 - 전환점에 대한 활용 부재</h2><p>작년 제 자신에게 전환점이 될 수 있는 계기를 정확히 못 살린 점이 아쉽게 생각합니다. 이점에서 더욱더 큰 반성을 해야 한다 생각합니다. 여러 번의 개발 방향성에 대한 깊은 고민에서 제 자신이 갇혀있다는 생각을 계속하게 되었습니다.</p>
+<p>이러한 저에게 아쉬운 점은 개발 능력 성장이란 궁극적 목표로 나아가지 못하게 되었고, 계속 개발 실력이 정체 (이해 못 한 소스코드 사용 → 무작정 개발 → 이해 못 함 → 개발 능력 향상의 부재의 악순환)이 되었다는 점입니다.</p>
+<p>하지만 긍정적으로나마 개선한 부분은 여럿 있습니다.</p>
+<h2 id="첫-번째-카페인-의존-개선"><a href="#첫-번째-카페인-의존-개선" class="headerlink" title="첫 번째 - 카페인 의존 개선"></a>첫 번째 - 카페인 의존 개선</h2><p>과도 환 카페인의 의존에서 적절한 카페인 사용으로 바뀌게 되었습니다.<br>이러한 개선을 통해 카페인 의존에서 카페인을 적절하게 사용할 줄 알게끔 바뀌었습니다. 다만 이러한 과정을 통해 체력의 부재를 느끼게 되었습니다. 이 점은 적절한 식습관과 운동을 병행한 활동을 통해 개선해 나가야겠다란 생각을 가지게 되었습니다.</p>
+<h2 id="두-번째-머리와-글로-사용해서-코딩-문제에-접근"><a href="#두-번째-머리와-글로-사용해서-코딩-문제에-접근" class="headerlink" title="두 번째 - 머리와 글로 사용해서 코딩 문제에 접근"></a>두 번째 - 머리와 글로 사용해서 코딩 문제에 접근</h2><p>무작정 구글링을 통한 소스코드를 긁어오는 문제에서, 머리로 생각하고 직접 써보는 방식으로 코딩을 접근하게 되었습니다. 이러한 코딩 습관의 개선으로 기존에 얻고 난 다음 흘러 보내었던 내용에 대해 다시 한번 생각해 볼 수 있게 되었습니다.</p>
+<h2 id="세-번째-건강한-자아성찰과-건강한-자아비판에-대한-접근"><a href="#세-번째-건강한-자아성찰과-건강한-자아비판에-대한-접근" class="headerlink" title="세 번째 - 건강한 자아성찰과 건강한 자아비판에 대한 접근"></a>세 번째 - 건강한 자아성찰과 건강한 자아비판에 대한 접근</h2><p>항상 사람은 옳을 수 없다 생각합니다. 물론 제 생각일 수만 있지만요, 하지만 사람은 늘 잘할 수 없고 늘 못하는 거 또한 아닙니다. 잘할 수 없게 되면 다시 잘하게 만들면 되고, 못하면 그 못하는 부분을 개선하면 된다 생각합니다. 하지만 맹목적으로 나는 잘한다 잘한다란 생각의 주입으로 인한 자만감은, 더 이상 돌이킬 수 없게 커져버릴 수 있습니다. 다행히도 자신을 돌아보는 시간과 자신에 대한 비판을 건전하게 수용할 수 있게 되어서, 자신에 대해 생각해볼 시간을 가지게 되었습니다. 이점에 대해 지난 1년간의 얻은 수확 중 가장 크다고 생각하게 되었습니다</p>
+<p>총평 / 개발적인 성과를 크게 보진 못했으나, 자신에 대해 생각을 가진 한 해가 되었다고 생각합니다.<br>정말 저를 좋게 봐주신 분들에게 죄송한 말씀일 수 있습니다. 저는 아직 엄청 모자란 학생이고, 많은 실수를 저지르고, 많은 부분에서 부족합니다. 하지만 항상 이렇게 살수 없으므로 이러한 점들을 개선해 나갈 수 있도록 다시 한번 마음을 다잡고 나아가겠습니다. </p>
+<p>이 긴 글을 읽어주신 모든 분께 감사드립니다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-10T14:02:30.549Z">2020-11-10</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 793 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/10/20201106/">20201106</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="어제-JS로-한-삽질에-대한-기록"><a href="#어제-JS로-한-삽질에-대한-기록" class="headerlink" title="어제 JS로 한 삽질에 대한 기록"></a>어제 JS로 한 삽질에 대한 기록</h2><p>배우고 있는 시기에, 늘 겪는 일 중 하나인 삽질에 대해 설명해보고자 합니다. (Tmi이지만, 제가 겪어보게 되었거든요 하하..)</p>
+<p>제 블로그를 처음 오신 분들도 있을 수 있으니깐, 2020-11-05 포스트를 참고해 주시거나</p>
+<p>개발하다 보면 이곳을 파야 정답이 나오는데, 다른 곳을 파다 틀리는 경우도 있고 바로 앞에 결과가 있는데 빙 돌아서 다시 온 경우도 있었습니다.</p>
+<p>일단 어제의 소스코드를 다시 올리고자 합니다.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; API 불러오기</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 실무에선 axios를 많이 사용하지만 fetch로도 충분히 끌어올수 있다. (blog 참고, 조언참고)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; fetch(&#39;url&#39;) &#x3D; 서버에 불러올 자료 끌어오기</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;my-json-server.typicode.com&#x2F;hackurity01&#x2F;prgrms-gsmhs-rct-1-week-api&#x2F;questions&#x2F;1031&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    .then(function(response)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 서버에서 원초적인 데이터를 가져온다</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        return response.json();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &#125;) </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    .then(function(myJson_data) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 1차 가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; console.log(myJson_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        let Json_data &#x3D; JSON.stringify(myJson_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        console.log(Json_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 서버에서 가져온 데이터를 가공한다 1차가공후 2차가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        let Json_parse &#x3D; JSON.parse(Json_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; Mr.blog씨의 날짜와 질문(date, question) 3차가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        console.log(Json_parse);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        let Blog_date &#x3D; Json_parse.id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        let Blog_question &#x3D; Json_parse.question;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        console.log(Blog_date);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">        console.log(Blog_question);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        document.getElementById(&#39;blog_question&#39;).value &#x3D; &quot;12223&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    &#125;);</span></pre></td></tr></table></figure>
+<p>이러한 소스코드를 쓰게 되었는데, fetch에 대해 정확한 설명을 안 보고… JSON.stringify()를 통해 JSON을 다시 문자 배열로 만들어 버리고 (여기서 이상한 걸 느끼지 못했습니다..) 어코드가 왜 안되는지 생각했습니다.</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">let Json_data &#x3D; JSON.stringify(myJson_data);</span></pre></td></tr></table></figure>
-<p>문제의 이코드 stringify가 어떤건지만 좀더 제대로 찾아볼껄 생각해봅니다.. 제가 더 안찾은게 잘못이지만요. 여기서 좀더 생각하는 능력을 길러야 한다고 생각하게 되었습니다. 어찌어찌해서 찾아서 해봤지만요.</p>
+<p>문제의 코드 stringify가 어떤건지만 좀더 제대로 찾아볼껄 생각해봅니다.. 제가 더 안찾은게 잘못이지만요. 여기서 좀더 생각하는 능력을 길러야 한다고 생각하게 되었습니다. 어찌어찌해서 찾아서 해봤지만요.</p>
 <p>제가 느끼기엔 stringify가 Json이 분리해서 가져온 데이터를 합쳐주는, 존재인거 같습니다.</p>
 <p>그리고 난다음 그 문자열을 다시 JSON화 해서 불러오는 JSON.parse를 통해서</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">let Json_parse &#x3D; JSON.parse(Json_data);</span></pre></td></tr></table></figure>
-<p>다시 Json화를 시켜주는 코드를 가져와서 데이터를 Json화 했습니다! 엄청 돌아서 왔지만요.</p>
+<p>다시 Json 화를 시켜주는 코드를 가져와서 데이터를 Json 화했습니다! 엄청 돌아서 왔지만요.</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">let Blog_date &#x3D; Json_parse.id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">let Blog_question &#x3D; Json_parse.question;</span></pre></td></tr></table></figure>
-<p>결국, 처음 function으로 가져오게 된 값에 해당 JSON데이터가 있는 이름명을 적어주면 끝나는 일이였지만, 돌고 돌아 정답에 접근을 했습니다.</p>
-<p>저도 사실 어떠한 방법으로 접근하면 더 좋을까란 생각으로 코딩을 하다가 이러한 참사가 일어난거 같습니다.</p>
-<p>이 사실을 안것도, 이 코드가 필요한 친구가 가져와서 어떻게 하면 줄일수 있을까란 고민후에 저에게 알려주었습니다. 안그랬음 오늘도 삽을 팠다가 끝날수도 있죠,</p>
-<p>이를 통해 코드리뷰의 중요성에 대해 알수 있었고, 앞으로 개발해 나가는데, 큰 도움이 될거 같습니다.</p>
-<p>추신, 내일은 아이디어 회의가 기다리는데 얼마나 삽질을 하고 있을지 기대가 되고, 그로인한 경험이 얼마나 쌓일지가 기대가 되네요! 머리가 엄청 아프고 왜 이렇게 될까를 생각해보고 why?란 질문을 자신에게 던져볼 준비를 해야겠네요,,</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-11-06T05:17:41.681Z">2020-11-06</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5분 읽기 (대략 802 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/11/06/20201105/">20201105</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="배운점이-많은-하루"><a href="#배운점이-많은-하루" class="headerlink" title="배운점이 많은 하루"></a>배운점이 많은 하루</h2><p>오늘 배운점에 대해 설명해볼수 있는 기회가 있었습니다. css의 margin-left와 padding에 대한 차이와, 순수 바닐라 js코드를 바탕으로 한 JSON 파일 파싱까지, 수많은것에 대해 알려줄수 있게 되었습니다.</p>
-<p>처음엔 이해도 못했던 코드가, 이러한 방식으로 작동하게 되고 (데이터 가져오기 - 데이터 가공하기 - 데이터 추가로 가공하기 - 데이터 보기좋게 정렬하기)활용이 된다는 점이 인상깊었습니다. 물론 여기서 잘못된점을 찾아봐야 겠죠 먼가 이상합니다.. 아주 많이</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; API 불러오기</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 실무에선 axios를 많이 사용하지만 fetch로도 충분히 끌어올수 있다. (blog 참고, 조언참고)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; fetch(&#39;url&#39;) &#x3D; 서버에 불러올 자료 끌어오기</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;my-json-server.typicode.com&#x2F;hackurity01&#x2F;prgrms-gsmhs-rct-1-week-api&#x2F;questions&#x2F;1031&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    .then(function(response)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 서버에서 원초적인 데이터를 가져온다</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        return response.json();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &#125;) </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    .then(function(myJson_data) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 1차 가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; console.log(myJson_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        let Json_data &#x3D; JSON.stringify(myJson_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        console.log(Json_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 서버에서 가져온 데이터를 가공한다 1차가공후 2차가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        let Json_parse &#x3D; JSON.parse(Json_data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 정리 3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; Mr.blog씨의 날짜와 질문(date, question) 3차가공</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        console.log(Json_parse);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        let Blog_date &#x3D; Json_parse.id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        let Blog_question &#x3D; Json_parse.question;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        console.log(Blog_date);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">        console.log(Blog_question);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        document.getElementById(&#39;blog_question&#39;).value &#x3D; &quot;12223&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    &#125;);</span></pre></td></tr></table></figure>
-<p>어찌보면 Json을 가져올수 있는 간단한 소스코드 일수 있겠지만, 이점에서 제가 본받아야 할점들을 생각해 볼수 있었습니다.</p>
-<p>첫번째는 데이터만 가져와서 끝나는 일이 아니였습니다.<br>데이터만 가져오고 바로 소스코드를 가져오려고 하니깐, 배열로만 불러올수 있게 되어서 이문제점에 대해 생각하게 되었습니다. 여기서 늘, 다른 예시를 찾아보고 해보면 될까란 생각을 했지만, 이러다간 또 기초를 놓칠거 같아 해답을 가질수 있는 키워드로 계속 찾아보게 되었습니다.</p>
-<p>구글링을 통해, Json 데이터를 쉽게 가져올수 없을까란 키워드로만 검색 하게 되었고, 그에 대한 해답은 parse에 있었습니다.</p>
-<p>parse의 데이터 변환을 통해 Json 데이터를 더욱더 깔금하게 불러올수 있게 되었고, 이를 바탕으로 해서 나중에도 이 데이터는 이 데이터다! 라는걸 각인하기 위해 조금더 이름에 대해 신경을 쓰게 되었습니다.</p>
-<p>이러한 데이터 변경에 대한 구조를 통해, 조금더 이 코드에 대해 생각해볼수 있게 되었습니다.</p>
-<p>추신, 중복된 코드를 사용한거 같습니다 음,, 어찌보면 잘못된 접근을 통해 들어온거 같네요. 하지만 획득한점이 있는거 같습니다. 너무 꼬인 코드로 너무 꼬이게 접근한거 같네요. 내일 수정이 필요해 보입니다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-11-04T12:19:18.539Z">2020-11-04</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9분 읽기 (대략 1277 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/11/04/Today%20list/">Today list</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="지난-1년여간의-회고록"><a href="#지난-1년여간의-회고록" class="headerlink" title="지난 1년여간의 회고록"></a>지난 1년여간의 회고록</h2><p>어찌보면 현재 학교의 시간은 11월달 이후와 이전으로 나뉘게 됩니다.<br>11월달 이후 1년동안 자신이 배울수 있는걸 펼칠수 있는 GSM Festival과 함께 여러 IT 행사들이 몰려있기 때문입니다.</p>
-<p>우선 잘한점을 말하기전에 내가 한 행동에 대한 반성을 시작하려 합니다.<br>어찌보면 1년전보다 더 발전한 부분은 있지만 더 후퇴한 부분또한 있기 때문입니다.</p>
-<h2 id="첫번째-시간활용에-대한-부재"><a href="#첫번째-시간활용에-대한-부재" class="headerlink" title="첫번째 - 시간활용에 대한 부재"></a>첫번째 - 시간활용에 대한 부재</h2><p>자신에게 부과된 시간을 제대로 활용하지 못한채로 1년을 보내게 되었습니다. 이점에서 반성해야 한다 생각합니다. 여가 시간 대부분을 운동이나 독서와 같은 생산적 활동이 아닌 게임과 같은 비생산적 활동이 대부분이 차지한점을 깊히 반성하게 되었습니다.</p>
-<h2 id="두번째-기대치의-높은-설정"><a href="#두번째-기대치의-높은-설정" class="headerlink" title="두번째 - 기대치의 높은 설정"></a>두번째 - 기대치의 높은 설정</h2><p>자신에게 기대한 목표치를 너무 높게 설정해서, 그 일을 해결하기 전에 포기하는 경향이 있었습니다. 이점에서 반성해야 생각합니다. 자신이 맡을수 있는 일과 없는일을 확실히 구분하여 처리해야 하는 능력을 길러야 한다 생각을 가지게 되었습니다. 자신이 처리 못하는일을 자신이 하겠다고 나서게 된다면, 자신 포함 그 일을 하는 사람 전체에게 피해를 줄수 있기 때문입니다.</p>
-<h2 id="세번째-전환점에-대한-활용-부재"><a href="#세번째-전환점에-대한-활용-부재" class="headerlink" title="세번째 - 전환점에 대한 활용 부재"></a>세번째 - 전환점에 대한 활용 부재</h2><p>작년 제 자신에게 전환점이 될수 있는 계기를 정확히 못살린점이 아쉽게 생각합니다. 이점에서 더욱더 큰 반성을 해야 한다 생각합니다. 여러번의 개발 방향성에 대한 깊은 고민에서 제 자신이 갇혀있다는 생각을 계속 하게 되었습니다.</p>
-<p>이러한 저에게 아쉬운점은 개발 능력 성장이란 궁극적 목표로 나아가지 못하게 되었고, 계속 개발 실력이 정체 (이해못한 소스코드 사용 → 무작정 개발 → 이해 못함 → 개발 능력 향상의 부재의 악순환)이 되었다는 점 입니다.</p>
-<p>하지만 긍정적으로나마 개선한 부분은 여럿 있습니다.</p>
-<h2 id="첫번째-카페인-의존-개선"><a href="#첫번째-카페인-의존-개선" class="headerlink" title="첫번째 - 카페인 의존 개선"></a>첫번째 - 카페인 의존 개선</h2><p>과도환 카페인의 의존에서 적절한 카페인 사용으로 바뀌게 되었습니다.<br>이러한 개선을 통해 카페인 의존에서 카페인을 적절하게 사용할줄 알게끔 바뀌었습니다. 다만 이러한 과정을 통해 체력의 부재를 느끼게 되었습니다. 이 점은 적절한 식습관과 운동을 병행한 활동을 통해 개선해 나가야 겠다란 생각을 가지게 되었습니다.</p>
-<h2 id="두번째-머리와-글로-사용해서-코딩-문제에-접근"><a href="#두번째-머리와-글로-사용해서-코딩-문제에-접근" class="headerlink" title="두번째 - 머리와 글로 사용해서 코딩 문제에 접근"></a>두번째 - 머리와 글로 사용해서 코딩 문제에 접근</h2><p>무작정 구글링을 통한 소스코드를 긁어오는 문제에서, 머리로 생각하고 직접 써보는 방식으로 코딩을 접근하게 되었습니다. 이러한 코딩 습관의 개선으로 기존에 얻고 난다음 흘러 보내었던 내용에 대해 다시 한번 생각해 볼수 있게 되었습니다.</p>
-<h2 id="세번째-건강한-자아성찰과-건강한-자아비판에-대한-접근"><a href="#세번째-건강한-자아성찰과-건강한-자아비판에-대한-접근" class="headerlink" title="세번째 - 건강한 자아성찰과 건강한 자아비판에 대한 접근"></a>세번째 - 건강한 자아성찰과 건강한 자아비판에 대한 접근</h2><p>항상 사람은 옳을수 없다 생각합니다. 물론 제 생각일수만 있지만요, 하지만 사람은 늘 잘할수 없고 늘 못하는거 또한 아닙니다. 잘할수 없게 되면 다시 잘하게 만들면 되고, 못하면 그 못하는 부분을 개선하면 된다 생각합니다. 하지만 맹목적으로 나는 잘한다 잘한다란 생각의 주입으로 인한 자만감은, 더이상 돌이킬수 없게 커져버릴수 있습니다. 다행이도 자신을 돌아보는 시간과 자신에 대한 비판을 건전하게 수용할수 있게 되어서, 자신에 대해 생각해볼 시간을 가지게 되었습니다. 이점에 대해 지난 1년간의 얻은 수확중 가장 크다고 생각하게 되었습니다.</p>
-<p>총평 / 개발적인 성과를 크게 보진 못했으나, 자신에 대해 생각을 가진 한해가 되었다고 생각합니다.<br>정말 저를 좋게 봐주신분들에게 죄송한 말씀일수 있습니다. 저는 아직 엄청 모자른 학생이고, 많은 실수를 저지르고, 많은 부분에서 부족합니다. 하지만 항상 이렇게 살수 없으므로 이러한점들을 개선해 나갈수 있도록 다시한번 마음을 다잡고 나아가겠습니다. 감사합니다</p>
+<p>결국, 처음 function으로 가져오게 된 값에 해당 JSON 데이터가 있는 이름 면을 적어주면 끝나는 일이었지만, 돌고 돌아 정답에 접근을 했습니다.</p>
+<p>저도 사실 어떠한 방법으로 접근하면 더 좋을까란 생각으로 코딩을 하다가 이러한 참사가 일어난 거 같습니다.</p>
+<p>이 사실을 안 것도, 이 코드가 필요한 친구가 가져와서 어떻게 하면 줄일 수 있을까란 고민 후에 저에게 알려주었습니다. 안 그랬음 오늘도 삽을 팠다가 끝날 수도 있죠,</p>
 
         </div>
         
@@ -686,26 +679,7 @@
         
         <article class="media">
             
-            <a href="/2020/11/06/20201107/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20201107">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T05:20:20.514Z">2020-11-06</time></div>
-                    <a href="/2020/11/06/20201107/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201107</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/11/06/20201105/" class="media-left">
+            <a href="/2020/11/10/20201105/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="20201105">
                 </p>
@@ -713,8 +687,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T05:17:41.681Z">2020-11-06</time></div>
-                    <a href="/2020/11/06/20201105/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201105</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-10T14:06:45.866Z">2020-11-10</time></div>
+                    <a href="/2020/11/10/20201105/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201105</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -724,7 +698,7 @@
         
         <article class="media">
             
-            <a href="/2020/11/04/Today%20list/" class="media-left">
+            <a href="/2020/11/10/Today%20list/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Today list">
                 </p>
@@ -732,8 +706,27 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-04T12:19:18.539Z">2020-11-04</time></div>
-                    <a href="/2020/11/04/Today%20list/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Today list</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-10T14:04:48.002Z">2020-11-10</time></div>
+                    <a href="/2020/11/10/Today%20list/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Today list</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/11/10/20201106/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20201106">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-10T14:02:30.549Z">2020-11-10</time></div>
+                    <a href="/2020/11/10/20201106/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201106</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -860,26 +853,7 @@
         
         <article class="media">
             
-            <a href="/2020/11/06/20201107/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20201107">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T05:20:20.514Z">2020-11-06</time></div>
-                    <a href="/2020/11/06/20201107/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201107</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/11/06/20201105/" class="media-left">
+            <a href="/2020/11/10/20201105/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="20201105">
                 </p>
@@ -887,8 +861,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T05:17:41.681Z">2020-11-06</time></div>
-                    <a href="/2020/11/06/20201105/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201105</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-10T14:06:45.866Z">2020-11-10</time></div>
+                    <a href="/2020/11/10/20201105/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201105</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -898,7 +872,7 @@
         
         <article class="media">
             
-            <a href="/2020/11/04/Today%20list/" class="media-left">
+            <a href="/2020/11/10/Today%20list/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Today list">
                 </p>
@@ -906,8 +880,27 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-04T12:19:18.539Z">2020-11-04</time></div>
-                    <a href="/2020/11/04/Today%20list/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Today list</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-10T14:04:48.002Z">2020-11-10</time></div>
+                    <a href="/2020/11/10/Today%20list/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Today list</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/11/10/20201106/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20201106">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-10T14:02:30.549Z">2020-11-10</time></div>
+                    <a href="/2020/11/10/20201106/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20201106</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1145,7 +1138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
     
     
-<a id="back-to-top" title="Back to Top" href="javascript:;" target="_blank" rel="noopener">
+<a id="back-to-top" title="Kembali ke atas" href="javascript:;" target="_blank" rel="noopener">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
